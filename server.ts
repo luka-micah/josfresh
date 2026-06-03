@@ -10,7 +10,10 @@ import { Product, Order, Subscription, InventoryAlert, BackupLog, ERPIntegration
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT);
+  if (isNaN(PORT) || PORT <= 0) {
+    throw new Error("The PORT environment variable must be set to a valid positive number.");
+  }
 
   app.use(express.json());
 
@@ -825,8 +828,10 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), "dist");
+    const distPath = path.join(process.cwd(), "dist/client");
+
     app.use(express.static(distPath));
+
     app.get("*", (req, res) => {
       res.sendFile(path.join(distPath, "index.html"));
     });
