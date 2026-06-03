@@ -1,0 +1,6 @@
+{
+  "name": "JosFresh",
+  "description": "A high-performance fresh farm produce e-commerce platform featuring real-time inventory management, weekly grocery subscriptions, customer order tracking, offline mode synchronization, secure checkout, and full warehouse operations dashboards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
