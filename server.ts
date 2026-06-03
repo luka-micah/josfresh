@@ -828,7 +828,7 @@ async function startServer() {
     });
     app.use(vite.middlewares);
   } else {
-    const distPath = path.join(process.cwd(), "dist/client");
+    const distPath = path.join(process.cwd(), "dist");
 
     app.use(express.static(distPath));
 
